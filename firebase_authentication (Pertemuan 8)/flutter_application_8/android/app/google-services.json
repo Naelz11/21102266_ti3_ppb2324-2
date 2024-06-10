@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365756037634",
+    "project_id": "prakflutterfirebase-adfe5",
+    "storage_bucket": "prakflutterfirebase-adfe5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365756037634:android:5f89a09f1c2f46be2ec51b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJH-EnbF4Gx5uvPdK7fn7AQf5yhk8D1f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
