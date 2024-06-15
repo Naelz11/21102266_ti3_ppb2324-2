@@ -41,48 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDSZANIKlt-7pHLvTB09djgY7T23MZM91I',
-    appId: '1:365756037634:web:870c7345c2473b282ec51b',
-    messagingSenderId: '365756037634',
-    projectId: 'prakflutterfirebase-adfe5',
-    authDomain: 'prakflutterfirebase-adfe5.firebaseapp.com',
-    storageBucket: 'prakflutterfirebase-adfe5.appspot.com',
-    measurementId: 'G-7QW6EHMGXP',
+    apiKey: 'AIzaSyCMkZQWq3ffFbhUbfD06z7nEMd_D1zyrfI',
+    appId: '1:1000529219325:web:e21439451cadad5e2eb894',
+    messagingSenderId: '1000529219325',
+    projectId: 'ppb2266',
+    authDomain: 'ppb2266.firebaseapp.com',
+    storageBucket: 'ppb2266.appspot.com',
+    measurementId: 'G-6G96TPMB8G',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCJH-EnbF4Gx5uvPdK7fn7AQf5yhk8D1f0',
-    appId: '1:365756037634:android:5f89a09f1c2f46be2ec51b',
-    messagingSenderId: '365756037634',
-    projectId: 'prakflutterfirebase-adfe5',
-    storageBucket: 'prakflutterfirebase-adfe5.appspot.com',
+    apiKey: 'AIzaSyCt-fXIOoy-MkUIaTdgWRRnVHKR4Q1I7n0',
+    appId: '1:1000529219325:android:65200441ff0251cf2eb894',
+    messagingSenderId: '1000529219325',
+    projectId: 'ppb2266',
+    storageBucket: 'ppb2266.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAUzhCrHS3hn2XwDGZTGBEu_WVCYEkWlLw',
-    appId: '1:365756037634:ios:d9681ad645bc58282ec51b',
-    messagingSenderId: '365756037634',
-    projectId: 'prakflutterfirebase-adfe5',
-    storageBucket: 'prakflutterfirebase-adfe5.appspot.com',
+    apiKey: 'AIzaSyBIczK9IGxEgxMAD9KCebUdc8J_SD8Pprk',
+    appId: '1:1000529219325:ios:23d526dff8b9e1842eb894',
+    messagingSenderId: '1000529219325',
+    projectId: 'ppb2266',
+    storageBucket: 'ppb2266.appspot.com',
     iosBundleId: 'com.example.flutterApplication8',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAUzhCrHS3hn2XwDGZTGBEu_WVCYEkWlLw',
-    appId: '1:365756037634:ios:d9681ad645bc58282ec51b',
-    messagingSenderId: '365756037634',
-    projectId: 'prakflutterfirebase-adfe5',
-    storageBucket: 'prakflutterfirebase-adfe5.appspot.com',
+    apiKey: 'AIzaSyBIczK9IGxEgxMAD9KCebUdc8J_SD8Pprk',
+    appId: '1:1000529219325:ios:23d526dff8b9e1842eb894',
+    messagingSenderId: '1000529219325',
+    projectId: 'ppb2266',
+    storageBucket: 'ppb2266.appspot.com',
     iosBundleId: 'com.example.flutterApplication8',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDSZANIKlt-7pHLvTB09djgY7T23MZM91I',
-    appId: '1:365756037634:web:ade98605052a8a042ec51b',
-    messagingSenderId: '365756037634',
-    projectId: 'prakflutterfirebase-adfe5',
-    authDomain: 'prakflutterfirebase-adfe5.firebaseapp.com',
-    storageBucket: 'prakflutterfirebase-adfe5.appspot.com',
-    measurementId: 'G-P83EPJD97K',
+    apiKey: 'AIzaSyCMkZQWq3ffFbhUbfD06z7nEMd_D1zyrfI',
+    appId: '1:1000529219325:web:9e24ad776623dceb2eb894',
+    messagingSenderId: '1000529219325',
+    projectId: 'ppb2266',
+    authDomain: 'ppb2266.firebaseapp.com',
+    storageBucket: 'ppb2266.appspot.com',
+    measurementId: 'G-2XWZLECJ4J',
   );
+
 }

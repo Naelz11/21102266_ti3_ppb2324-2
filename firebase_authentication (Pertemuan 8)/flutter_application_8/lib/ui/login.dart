@@ -1,6 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_8/ui/home_screen.dart';
+import 'package:flutter_application_8/ui/phone_auth_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_application_8/bloc/login/login_cubit.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../utils/routes.dart';
 
@@ -15,6 +19,23 @@ class _LoginScreenState extends State<LoginScreen> {
   final emailEdc = TextEditingController();
   final passEdc = TextEditingController();
   bool passInvisible = false;
+
+  Future<UserCredential> signInWithGoogle() async {
+    final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
+    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
+    final credential = GoogleAuthProvider.credential(
+      accessToken: gAuth.accessToken,
+      idToken: gAuth.idToken,
+    );
+    return await FirebaseAuth.instance.signInWithCredential(credential).then(
+      (value) async => await Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        (route) => false,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,22 +122,59 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 50,
               ),
               ElevatedButton(
-                  onPressed: () {
-                    context
-                        .read<LoginCubit>()
-                        .login(email: emailEdc.text, password: passEdc.text);
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xff3D4DE0),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                        color: Colors.white),
-                  )),
+                onPressed: () {
+                  context
+                      .read<LoginCubit>()
+                      .login(email: emailEdc.text, password: passEdc.text);
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff3D4DE0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10))),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.white),
+                ),
+              ),
+              const SizedBox(
+                height: 30.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      // Handle Google Sign-In
+                    },
+                    child: const CircleAvatar(
+                      radius: 20.0,
+                      backgroundImage: NetworkImage(
+                          'https://img2.pngdownload.id/20190228/qby/kisspng-google-logo-google-account-g-suite-google-images-g-icon-archives-search-png-5c77ad39b77471.9286340315513470017515.jpg'),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 30.0,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PhoneAuthScreen(),
+                        ),
+                      );
+                    },
+                    child: const CircleAvatar(
+                      radius: 20.0,
+                      backgroundImage: NetworkImage(
+                          'https://freepngimg.com/thumb/business/83615-blue-icons-symbol-telephone-computer-logo.png'),
+                    ),
+                  )
+                ],
+              ),
               const SizedBox(
                 height: 25,
               ),
@@ -126,15 +184,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const Text("Belum punya akun ?"),
                   TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/register');
-                      },
-                      child: const Text(
-                        "Daftar",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff3D4DE0)),
-                      ))
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
+                    child: const Text(
+                      "Daftar",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff3D4DE0)),
+                    ),
+                  )
                 ],
               )
             ],
