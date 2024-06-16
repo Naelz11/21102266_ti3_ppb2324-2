@@ -5,7 +5,6 @@ import 'package:flutter_application_8/ui/home_screen.dart';
 import 'package:flutter_application_8/ui/login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_application_8/bloc/login/login_cubit.dart';
-import 'package:flutter_application_8/ui/splash.dart';
 import 'package:flutter_application_8/utils/routes.dart';
 import 'bloc/register/register_cubit.dart';
 import 'firebase_options.dart';
